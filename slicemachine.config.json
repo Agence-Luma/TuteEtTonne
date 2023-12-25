@@ -1,0 +1,6 @@
+{
+  "libraries": ["./slices"],
+  "repositoryName": "tute-et-tonne",
+  "adapter": "@slicemachine/adapter-nuxt",
+  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
+}

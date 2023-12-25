@@ -1,0 +1,46 @@
+{
+  "id": "formulaire_de_contact",
+  "label": "Formulaire de contact",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "titre_premiere_ligne": {
+        "type": "Text",
+        "config": {
+          "label": "Titre première ligne",
+          "placeholder": ""
+        }
+      },
+      "titre_deuxieme_ligne": {
+        "type": "Text",
+        "config": {
+          "label": "Titre deuxième ligne",
+          "placeholder": ""
+        }
+      },
+      "categories": {
+        "type": "Group",
+        "config": {
+          "label": "Catégories",
+          "fields": {
+            "categorie": {
+              "type": "Text",
+              "config": {
+                "label": "Catégorie",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "parametres",
+  "label": "Paramètres",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "titre_du_site": {
+        "type": "Text",
+        "config": {
+          "label": "Titre du site",
+          "placeholder": ""
+        }
+      },
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "telephone": {
+        "type": "Text",
+        "config": {
+          "label": "Téléphone",
+          "placeholder": ""
+        }
+      },
+      "mail": {
+        "type": "Text",
+        "config": {
+          "label": "Mail",
+          "placeholder": ""
+        }
+      },
+      "reseaux_sociaux": {
+        "type": "Group",
+        "config": {
+          "label": "Réseaux sociaux",
+          "fields": {
+            "logo": {
+              "type": "Image",
+              "config": {
+                "label": "Logo",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "lien": {
+              "type": "Link",
+              "config": {
+                "label": "Lien",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "cle_web3forms": {
+        "type": "Text",
+        "config": {
+          "label": "Clé Web3Forms",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

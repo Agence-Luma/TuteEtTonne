@@ -1,0 +1,43 @@
+{
+  "id": "recommandation",
+  "type": "SharedSlice",
+  "name": "Recommandation",
+  "description": "Recommandation",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titre_premiere_ligne": {
+          "type": "Text",
+          "config": {
+            "label": "Titre première ligne",
+            "placeholder": ""
+          }
+        },
+        "titre_deuxieme_ligne": {
+          "type": "Text",
+          "config": {
+            "label": "Titre deuxième ligne",
+            "placeholder": ""
+          }
+        },
+        "coup_de_coeur": {
+          "type": "Link",
+          "config": {
+            "label": "Coup de coeur",
+            "select": "document",
+            "customtypes": [
+              "coup_de_coeur"
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

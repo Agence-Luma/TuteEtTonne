@@ -1,0 +1,27 @@
+{
+  "id": "images_simples",
+  "type": "SharedSlice",
+  "name": "ImagesSimples",
+  "description": "ImagesSimples",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      }
+    }
+  ]
+}

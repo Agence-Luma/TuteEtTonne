@@ -1,0 +1,19 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"titre": {
+				"__TYPE__": "FieldContent",
+				"value": "lonely",
+				"type": "Text"
+			},
+			"sous_titre": {
+				"__TYPE__": "FieldContent",
+				"value": "reason",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

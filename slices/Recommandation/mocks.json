@@ -1,0 +1,26 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"titre_premiere_ligne": {
+				"__TYPE__": "FieldContent",
+				"value": "for",
+				"type": "Text"
+			},
+			"titre_deuxieme_ligne": {
+				"__TYPE__": "FieldContent",
+				"value": "bicycle",
+				"type": "Text"
+			},
+			"coup_de_coeur": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
+			}
+		},
+		"items": []
+	}
+]

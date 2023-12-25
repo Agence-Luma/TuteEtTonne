@@ -1,0 +1,73 @@
+{
+  "id": "texte_cartes_verticales",
+  "type": "SharedSlice",
+  "name": "TexteCartesVerticales",
+  "description": "TexteCartesVerticales",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titre_premiere_ligne": {
+          "type": "Text",
+          "config": {
+            "label": "Titre première ligne",
+            "placeholder": ""
+          }
+        },
+        "titre_deuxieme_ligne": {
+          "type": "Text",
+          "config": {
+            "label": "Titre deuxième ligne",
+            "placeholder": ""
+          }
+        },
+        "texte": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Texte",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {
+        "titre": {
+          "type": "Text",
+          "config": {
+            "label": "Titre",
+            "placeholder": ""
+          }
+        },
+        "bouton_titre": {
+          "type": "Text",
+          "config": {
+            "label": "Bouton Titre",
+            "placeholder": ""
+          }
+        },
+        "bouton_lien": {
+          "type": "Link",
+          "config": {
+            "label": "Bouton Lien",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      }
+    }
+  ]
+}

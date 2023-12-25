@@ -1,0 +1,10 @@
+@import "./fonts.css";
+@import "./headings.css";
+
+body {
+  @apply font-helvetica;
+}
+
+main {
+  @apply flex flex-col items-center justify-center;
+}

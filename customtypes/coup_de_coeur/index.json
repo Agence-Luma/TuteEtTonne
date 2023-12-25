@@ -1,0 +1,97 @@
+{
+  "id": "coup_de_coeur",
+  "label": "Coup de coeur",
+  "format": "page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "titre_premiere_ligne": {
+        "type": "Text",
+        "config": {
+          "label": "Titre première ligne",
+          "placeholder": ""
+        }
+      },
+      "titre_deuxieme_ligne": {
+        "type": "Text",
+        "config": {
+          "label": "Titre deuxième ligne",
+          "placeholder": ""
+        }
+      },
+      "carousel": {
+        "type": "Group",
+        "config": {
+          "label": "Carousel",
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": {
+                "label": "Image",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "titre": {
+              "type": "SharedSlice"
+            },
+            "recommandation": {
+              "type": "SharedSlice"
+            },
+            "paragraphe": {
+              "type": "SharedSlice"
+            },
+            "images_simples": {
+              "type": "SharedSlice"
+            },
+            "image_pleine_largeur": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      },
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      }
+    }
+  }
+}
