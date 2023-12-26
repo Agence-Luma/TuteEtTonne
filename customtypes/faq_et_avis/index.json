@@ -1,17 +1,11 @@
 {
-  "id": "coup_de_coeur",
-  "label": "Coup de coeur",
+  "id": "faq_et_avis",
+  "label": "FAQ et avis",
   "format": "page",
-  "repeatable": true,
+  "repeatable": false,
   "status": true,
   "json": {
     "Main": {
-      "uid": {
-        "config": {
-          "label": "UID"
-        },
-        "type": "UID"
-      },
       "titre_premiere_ligne": {
         "type": "Text",
         "config": {
@@ -26,36 +20,12 @@
           "placeholder": ""
         }
       },
-      "categorie": {
-        "type": "Select",
+      "image": {
+        "type": "Image",
         "config": {
-          "label": "Catégorie",
-          "placeholder": "",
-          "options": [
-            "Site",
-            "Randonnée",
-            "Culinaire",
-            "Monument",
-            "Sport",
-            "Événement"
-          ],
-          "default_value": "Site"
-        }
-      },
-      "carousel": {
-        "type": "Group",
-        "config": {
-          "label": "Carousel",
-          "fields": {
-            "image": {
-              "type": "Image",
-              "config": {
-                "label": "Image",
-                "constraint": {},
-                "thumbnails": []
-              }
-            }
-          }
+          "label": "Image",
+          "constraint": {},
+          "thumbnails": []
         }
       },
       "slices": {
@@ -63,19 +33,10 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "titre": {
+            "foire_aux_questions": {
               "type": "SharedSlice"
             },
-            "recommandation": {
-              "type": "SharedSlice"
-            },
-            "paragraphe": {
-              "type": "SharedSlice"
-            },
-            "images_simples": {
-              "type": "SharedSlice"
-            },
-            "image_pleine_largeur": {
+            "avis": {
               "type": "SharedSlice"
             }
           }

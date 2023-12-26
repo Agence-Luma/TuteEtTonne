@@ -1,7 +1,7 @@
 {
   "id": "texte_cartes_grille",
   "type": "SharedSlice",
-  "name": "TexteCartesGrille",
+  "name": "CoupsDeCoeur",
   "description": "TexteCartesGrille",
   "variations": [
     {
@@ -37,41 +37,14 @@
         }
       },
       "items": {
-        "titre": {
-          "type": "Text",
-          "config": {
-            "label": "Titre",
-            "placeholder": ""
-          }
-        },
-        "sous_titre": {
-          "type": "Text",
-          "config": {
-            "label": "Sous-titre",
-            "placeholder": ""
-          }
-        },
-        "bouton_titre": {
-          "type": "Text",
-          "config": {
-            "label": "Bouton Titre",
-            "placeholder": ""
-          }
-        },
-        "bouton_lien": {
+        "coup_de_coeur": {
           "type": "Link",
           "config": {
-            "label": "Bouton Lien",
-            "placeholder": "",
-            "select": null
-          }
-        },
-        "image": {
-          "type": "Image",
-          "config": {
-            "label": "Image",
-            "constraint": {},
-            "thumbnails": []
+            "label": "Coup de coeur",
+            "select": "document",
+            "customtypes": [
+              "coup_de_coeur"
+            ]
           }
         }
       }

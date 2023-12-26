@@ -1,0 +1,50 @@
+{
+  "id": "foire_aux_questions",
+  "type": "SharedSlice",
+  "name": "FoireAuxQuestions",
+  "description": "FoireAuxQuestions",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titre_premiere_ligne": {
+          "type": "Text",
+          "config": {
+            "label": "Titre première ligne",
+            "placeholder": ""
+          }
+        },
+        "titre_deuxieme_ligne": {
+          "type": "Text",
+          "config": {
+            "label": "Titre deuxième ligne",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "question": {
+          "type": "Text",
+          "config": {
+            "label": "Question",
+            "placeholder": ""
+          }
+        },
+        "reponse": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Réponse",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      }
+    }
+  ]
+}

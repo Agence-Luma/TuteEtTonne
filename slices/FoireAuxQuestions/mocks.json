@@ -1,0 +1,47 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"titre_premiere_ligne": {
+				"__TYPE__": "FieldContent",
+				"value": "sent",
+				"type": "Text"
+			},
+			"titre_deuxieme_ligne": {
+				"__TYPE__": "FieldContent",
+				"value": "beautiful",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"question",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "warn",
+							"type": "Text"
+						}
+					],
+					[
+						"reponse",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "In ad excepteur consectetur excepteur do enim excepteur irure voluptate veniam nisi do eiusmod."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

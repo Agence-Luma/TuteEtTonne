@@ -1,0 +1,43 @@
+{
+  "id": "avis",
+  "type": "SharedSlice",
+  "name": "Avis",
+  "description": "Avis",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titre": {
+          "type": "Text",
+          "config": {
+            "label": "Titre",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "texte": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Texte",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "auteur": {
+          "type": "Text",
+          "config": {
+            "label": "Auteur",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"titre": {
+				"__TYPE__": "FieldContent",
+				"value": "probably",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"texte",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Amet do excepteur id laboris sit anim fugiat mollit."
+									}
+								}
+							]
+						}
+					],
+					[
+						"auteur",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "building",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]

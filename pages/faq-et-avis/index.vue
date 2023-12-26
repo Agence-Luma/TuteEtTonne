@@ -2,11 +2,7 @@
 import { components } from "~/slices";
 
 const prismic = usePrismic();
-const route = useRoute();
-const { data: page } = useAsyncData(
-  `[hebergement-uid-${route.params.uid}]`,
-  () => prismic.client.getByUID("hebergement", route.params.uid as string),
-);
+const { data: page } = useAsyncData('[faq_et_avis]', () => prismic.client.getSingle('faq_et_avis'));
 
 const parametres = useParametres();
 
@@ -20,18 +16,14 @@ useHead({
     <Header
       :titre-premiere-ligne="page.data.titre_premiere_ligne"
       :titre-deuxieme-ligne="page.data.titre_deuxieme_ligne"
-      :images="page.data.carousel"
+      :images="[{ image: page.data.image }]"
+      class="mb-s"
     />
     <SliceZone
       wrapper="main"
-      class="pt-s"
+      class="pb-s"
       :slices="page?.data.slices ?? []"
       :components="components"
-    />
-    <Formulaire
-      v-if="page.data.formulaire_de_contact"
-      :formulaire="page.data.formulaire_de_contact"
-      class="px-2xl"
     />
   </div>
 </template>

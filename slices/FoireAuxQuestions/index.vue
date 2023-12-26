@@ -4,7 +4,7 @@ import { type Content } from "@prismicio/client";
 // The array passed to `getSliceComponentProps` is purely optional.
 // Consider it as a visual hint for you when templating your slice.
 defineProps(
-  getSliceComponentProps<Content.TexteCartesGrilleSlice>([
+  getSliceComponentProps<Content.FoireAuxQuestionsSlice>([
     "slice",
     "index",
     "slices",
@@ -14,21 +14,18 @@ defineProps(
 </script>
 
 <template>
-  <div class="px-xl py-l">
+  <div class="px-xl py-s flex flex-col gap-64 items-center">
     <TitreDouble
       v-if="slice.primary.titre_premiere_ligne && slice.primary.titre_deuxieme_ligne"
       :premiere-ligne="slice.primary.titre_premiere_ligne"
       :deuxieme-ligne="slice.primary.titre_deuxieme_ligne"
     />
-    <PrismicRichText
-      class="mt-32 mb-64"
-      :field="slice.primary.texte"
-    />
-    <div class="grid grid-cols-2 gap-32">
-      <CarteHorizontale
-        v-for="carte in slice.items"
-        :key="carte.bouton_lien.link_type"
-        :carte="carte"
+    <div class="grid grid-cols-2 gap-16 auto-rows-auto">
+      <Dropdown
+        v-for="faq in slice.items"
+        :key="faq.id"
+        :titre="faq.question"
+        :texte="faq.reponse"
       />
     </div>
   </div>

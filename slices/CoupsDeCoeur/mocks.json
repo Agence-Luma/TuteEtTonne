@@ -1,0 +1,46 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"titre_premiere_ligne": {
+				"__TYPE__": "FieldContent",
+				"value": "bank",
+				"type": "Text"
+			},
+			"titre_deuxieme_ligne": {
+				"__TYPE__": "FieldContent",
+				"value": "ability",
+				"type": "Text"
+			},
+			"texte": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Dolore irure amet exercitation veniam sunt ea minim incididunt enim eu ad exercitation ea consectetur Lorem. Est nostrud sit quis consectetur dolore proident Lorem. Enim sint nisi nisi deserunt in deserunt mollit velit esse sit tempor reprehenderit cupidatat."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"coup_de_coeur",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "DocumentLink",
+								"id": "mock_document_id"
+							}
+						}
+					]
+				]
+			}
+		]
+	}
+]

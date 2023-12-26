@@ -6,14 +6,16 @@ const props = defineProps({
   },
 });
 
-const form = useFormulaire(props.formulaire.uid);
+const prismic = usePrismic()
+const { data: form } = useAsyncData('$formulaire_de_contact', () => prismic.client.getByUID("formulaire_de_contact", props.formulaire.uid));
+
 const parametres = useParametres();
 
 const name = ref("");
 const mail = ref("");
 const object = ref("");
 const message = ref("");
-const categorie = ref(form.value?.data.categories[0]?.categorie);
+const categorie = computed(() => form.value?.data.categories[0]?.categorie);
 
 const submitForm = async () => {
   if (name.value === "") {
@@ -77,7 +79,8 @@ const showNotif = (msg: string, time = 5000, success = false) => {
 <template>
   <div
     v-if="form"
-    class="flex flex-col items-center justify-center gap-32 px-xl py-s mb-s"
+    class="flex flex-col items-center justify-center gap-32 py-s mb-s"
+    v-bind="$attrs"
   >
     <TitreDouble
       v-if="form.data.titre_premiere_ligne && form.data.titre_deuxieme_ligne"

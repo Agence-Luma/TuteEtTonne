@@ -180,6 +180,21 @@ interface CoupDeCoeurDocumentData {
   titre_deuxieme_ligne: prismic.KeyTextField;
 
   /**
+   * Catégorie field in *Coup de coeur*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Site
+   * - **API ID Path**: coup_de_coeur.categorie
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  categorie: prismic.SelectField<
+    "Site" | "Randonnée" | "Culinaire" | "Monument" | "Sport" | "Événement",
+    "filled"
+  >;
+
+  /**
    * Carousel field in *Coup de coeur*
    *
    * - **Field Type**: Group
@@ -246,6 +261,217 @@ export type CoupDeCoeurDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<
     Simplify<CoupDeCoeurDocumentData>,
     "coup_de_coeur",
+    Lang
+  >;
+
+/**
+ * Item in *Coups de coeur → Carousel*
+ */
+export interface CoupsDeCoeurDocumentDataCarouselItem {
+  /**
+   * Image field in *Coups de coeur → Carousel*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: coups_de_coeur.carousel[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+type CoupsDeCoeurDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Coups de coeur documents
+ */
+interface CoupsDeCoeurDocumentData {
+  /**
+   * Titre première ligne field in *Coups de coeur*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: coups_de_coeur.titre_premiere_ligne
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre_premiere_ligne: prismic.KeyTextField;
+
+  /**
+   * Titre deuxième ligne field in *Coups de coeur*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: coups_de_coeur.titre_deuxieme_ligne
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre_deuxieme_ligne: prismic.KeyTextField;
+
+  /**
+   * Carousel field in *Coups de coeur*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: coups_de_coeur.carousel[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  carousel: prismic.GroupField<Simplify<CoupsDeCoeurDocumentDataCarouselItem>>;
+
+  /**
+   * Slice Zone field in *Coups de coeur*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: coups_de_coeur.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<CoupsDeCoeurDocumentDataSlicesSlice> /**
+   * Meta Description field in *Coups de coeur*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: coups_de_coeur.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Coups de coeur*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: coups_de_coeur.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Coups de coeur*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: coups_de_coeur.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Coups de coeur document from Prismic
+ *
+ * - **API ID**: `coups_de_coeur`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CoupsDeCoeurDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<CoupsDeCoeurDocumentData>,
+    "coups_de_coeur",
+    Lang
+  >;
+
+type FaqEtAvisDocumentDataSlicesSlice = FoireAuxQuestionsSlice | AvisSlice;
+
+/**
+ * Content for FAQ et avis documents
+ */
+interface FaqEtAvisDocumentData {
+  /**
+   * Titre première ligne field in *FAQ et avis*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_et_avis.titre_premiere_ligne
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre_premiere_ligne: prismic.KeyTextField;
+
+  /**
+   * Titre deuxième ligne field in *FAQ et avis*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_et_avis.titre_deuxieme_ligne
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre_deuxieme_ligne: prismic.KeyTextField;
+
+  /**
+   * Image field in *FAQ et avis*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_et_avis.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Slice Zone field in *FAQ et avis*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_et_avis.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<FaqEtAvisDocumentDataSlicesSlice> /**
+   * Meta Description field in *FAQ et avis*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: faq_et_avis.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *FAQ et avis*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_et_avis.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *FAQ et avis*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: faq_et_avis.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * FAQ et avis document from Prismic
+ *
+ * - **API ID**: `faq_et_avis`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FaqEtAvisDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<FaqEtAvisDocumentData>,
+    "faq_et_avis",
     Lang
   >;
 
@@ -643,6 +869,93 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
+type PageContactDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Page contact documents
+ */
+interface PageContactDocumentData {
+  /**
+   * Formulaire de contact field in *Page contact*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_contact.formulaire_de_contact
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  formulaire_de_contact: prismic.ContentRelationshipField<"formulaire_de_contact">;
+
+  /**
+   * Image field in *Page contact*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_contact.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Slice Zone field in *Page contact*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_contact.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PageContactDocumentDataSlicesSlice> /**
+   * Meta Description field in *Page contact*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: page_contact.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Page contact*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_contact.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Page contact*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: page_contact.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Page contact document from Prismic
+ *
+ * - **API ID**: `page_contact`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PageContactDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<PageContactDocumentData>,
+    "page_contact",
+    Lang
+  >;
+
 /**
  * Item in *Paramètres → Réseaux sociaux*
  */
@@ -760,12 +1073,162 @@ export type ParametresDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | AccueilDocument
   | CoupDeCoeurDocument
+  | CoupsDeCoeurDocument
+  | FaqEtAvisDocument
   | FooterDocument
   | FormulaireDeContactDocument
   | HebergementDocument
   | MenuDocument
   | PageDocument
+  | PageContactDocument
   | ParametresDocument;
+
+/**
+ * Primary content in *Avis → Primary*
+ */
+export interface AvisSliceDefaultPrimary {
+  /**
+   * Titre field in *Avis → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: avis.primary.titre
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Avis → Items*
+ */
+export interface AvisSliceDefaultItem {
+  /**
+   * Texte field in *Avis → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: avis.items[].texte
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  texte: prismic.RichTextField;
+
+  /**
+   * Auteur field in *Avis → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: avis.items[].auteur
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  auteur: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Avis Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AvisSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AvisSliceDefaultPrimary>,
+  Simplify<AvisSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Avis*
+ */
+type AvisSliceVariation = AvisSliceDefault;
+
+/**
+ * Avis Shared Slice
+ *
+ * - **API ID**: `avis`
+ * - **Description**: Avis
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AvisSlice = prismic.SharedSlice<"avis", AvisSliceVariation>;
+
+/**
+ * Primary content in *FoireAuxQuestions → Primary*
+ */
+export interface FoireAuxQuestionsSliceDefaultPrimary {
+  /**
+   * Titre première ligne field in *FoireAuxQuestions → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: foire_aux_questions.primary.titre_premiere_ligne
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre_premiere_ligne: prismic.KeyTextField;
+
+  /**
+   * Titre deuxième ligne field in *FoireAuxQuestions → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: foire_aux_questions.primary.titre_deuxieme_ligne
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre_deuxieme_ligne: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *FoireAuxQuestions → Items*
+ */
+export interface FoireAuxQuestionsSliceDefaultItem {
+  /**
+   * Question field in *FoireAuxQuestions → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: foire_aux_questions.items[].question
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  question: prismic.KeyTextField;
+
+  /**
+   * Réponse field in *FoireAuxQuestions → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: foire_aux_questions.items[].reponse
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  reponse: prismic.RichTextField;
+}
+
+/**
+ * Default variation for FoireAuxQuestions Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FoireAuxQuestionsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FoireAuxQuestionsSliceDefaultPrimary>,
+  Simplify<FoireAuxQuestionsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *FoireAuxQuestions*
+ */
+type FoireAuxQuestionsSliceVariation = FoireAuxQuestionsSliceDefault;
+
+/**
+ * FoireAuxQuestions Shared Slice
+ *
+ * - **API ID**: `foire_aux_questions`
+ * - **Description**: FoireAuxQuestions
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FoireAuxQuestionsSlice = prismic.SharedSlice<
+  "foire_aux_questions",
+  FoireAuxQuestionsSliceVariation
+>;
 
 /**
  * Primary content in *ImagePleineLargeur → Primary*
@@ -1240,11 +1703,11 @@ export type TexteCarouselSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *TexteCartesGrille → Primary*
+ * Primary content in *CoupsDeCoeur → Primary*
  */
 export interface TexteCartesGrilleSliceDefaultPrimary {
   /**
-   * Titre première ligne field in *TexteCartesGrille → Primary*
+   * Titre première ligne field in *CoupsDeCoeur → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1254,7 +1717,7 @@ export interface TexteCartesGrilleSliceDefaultPrimary {
   titre_premiere_ligne: prismic.KeyTextField;
 
   /**
-   * Titre deuxième ligne field in *TexteCartesGrille → Primary*
+   * Titre deuxième ligne field in *CoupsDeCoeur → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1264,7 +1727,7 @@ export interface TexteCartesGrilleSliceDefaultPrimary {
   titre_deuxieme_ligne: prismic.KeyTextField;
 
   /**
-   * Texte field in *TexteCartesGrille → Primary*
+   * Texte field in *CoupsDeCoeur → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1275,62 +1738,22 @@ export interface TexteCartesGrilleSliceDefaultPrimary {
 }
 
 /**
- * Primary content in *TexteCartesGrille → Items*
+ * Primary content in *CoupsDeCoeur → Items*
  */
 export interface TexteCartesGrilleSliceDefaultItem {
   /**
-   * Titre field in *TexteCartesGrille → Items*
+   * Coup de coeur field in *CoupsDeCoeur → Items*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Content Relationship
    * - **Placeholder**: *None*
-   * - **API ID Path**: texte_cartes_grille.items[].titre
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  titre: prismic.KeyTextField;
-
-  /**
-   * Sous-titre field in *TexteCartesGrille → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: texte_cartes_grille.items[].sous_titre
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  sous_titre: prismic.KeyTextField;
-
-  /**
-   * Bouton Titre field in *TexteCartesGrille → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: texte_cartes_grille.items[].bouton_titre
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  bouton_titre: prismic.KeyTextField;
-
-  /**
-   * Bouton Lien field in *TexteCartesGrille → Items*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: texte_cartes_grille.items[].bouton_lien
+   * - **API ID Path**: texte_cartes_grille.items[].coup_de_coeur
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  bouton_lien: prismic.LinkField;
-
-  /**
-   * Image field in *TexteCartesGrille → Items*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: texte_cartes_grille.items[].image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
+  coup_de_coeur: prismic.ContentRelationshipField<"coup_de_coeur">;
 }
 
 /**
- * Default variation for TexteCartesGrille Slice
+ * Default variation for CoupsDeCoeur Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -1343,12 +1766,12 @@ export type TexteCartesGrilleSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *TexteCartesGrille*
+ * Slice variation for *CoupsDeCoeur*
  */
 type TexteCartesGrilleSliceVariation = TexteCartesGrilleSliceDefault;
 
 /**
- * TexteCartesGrille Shared Slice
+ * CoupsDeCoeur Shared Slice
  *
  * - **API ID**: `texte_cartes_grille`
  * - **Description**: TexteCartesGrille
@@ -1624,6 +2047,13 @@ declare module "@prismicio/client" {
       CoupDeCoeurDocumentData,
       CoupDeCoeurDocumentDataCarouselItem,
       CoupDeCoeurDocumentDataSlicesSlice,
+      CoupsDeCoeurDocument,
+      CoupsDeCoeurDocumentData,
+      CoupsDeCoeurDocumentDataCarouselItem,
+      CoupsDeCoeurDocumentDataSlicesSlice,
+      FaqEtAvisDocument,
+      FaqEtAvisDocumentData,
+      FaqEtAvisDocumentDataSlicesSlice,
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataLiensItem,
@@ -1640,10 +2070,23 @@ declare module "@prismicio/client" {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      PageContactDocument,
+      PageContactDocumentData,
+      PageContactDocumentDataSlicesSlice,
       ParametresDocument,
       ParametresDocumentData,
       ParametresDocumentDataReseauxSociauxItem,
       AllDocumentTypes,
+      AvisSlice,
+      AvisSliceDefaultPrimary,
+      AvisSliceDefaultItem,
+      AvisSliceVariation,
+      AvisSliceDefault,
+      FoireAuxQuestionsSlice,
+      FoireAuxQuestionsSliceDefaultPrimary,
+      FoireAuxQuestionsSliceDefaultItem,
+      FoireAuxQuestionsSliceVariation,
+      FoireAuxQuestionsSliceDefault,
       ImagePleineLargeurSlice,
       ImagePleineLargeurSliceDefaultPrimary,
       ImagePleineLargeurSliceImageHautePrimary,

@@ -40,7 +40,7 @@ const recommanded = computed(() => page.value);
           {{ recommanded.data.titre_premiere_ligne }}
         </p>
         <p class="text-l uppercase">
-          {{ recommanded.data.titre_deuxieme_ligne }}
+          {{ recommanded.data.categorie }}
         </p>
         <Bouton
           class="mt-16"

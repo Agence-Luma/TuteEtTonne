@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { components } from '~/slices'
-
-const page = useAccueil();
+const prismic = usePrismic();
+const { data: page } = useAsyncData('coups_de_coeur', () => prismic.client.getSingle('coups_de_coeur'));
 
 const parametres = useParametres();
 
@@ -10,24 +9,13 @@ useHead({
 })
 </script>
 
-
 <template>
   <div v-if="page">
     <Header
       :titre-premiere-ligne="page.data.titre_premiere_ligne"
       :titre-deuxieme-ligne="page.data.titre_deuxieme_ligne"
       :images="page.data.carousel"
-      :full-height="true"
     />
-    <SliceZone
-      wrapper="main"
-      :slices="page.data.slices ?? []"
-      :components="components"
-    />
-    <Formulaire
-      v-if="page.data.formulaire_de_contact"
-      :formulaire="page.data.formulaire_de_contact"
-      class="px-2xl"
-    />
+    <CoupsDeCoeur />
   </div>
 </template>

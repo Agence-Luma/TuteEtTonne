@@ -1,11 +1,13 @@
 <script setup lang="ts">
-const footer = useFooter();
+const prismic = usePrismic();
+const { data: page } = useAsyncData('$footer', () => prismic.client.getSingle('footer'));
+
 const parametres = useParametres();
 </script>
 
 <template>
   <div
-    v-if="footer"
+    v-if="page"
     class="bg-black w-full py-64 px-100 rounded-t-[40px] text-white flex justify-between -mt-[40px] relative z-10"
   >
     <div class="flex flex-col gap-32 justify-between">
@@ -15,9 +17,9 @@ const parametres = useParametres();
         :field="parametres.data.logo"
       />
       <PrismicRichText
-        v-if="footer.data.texte"
+        v-if="page.data.texte"
         class="text-xs"
-        :field="footer.data.texte"
+        :field="page.data.texte"
       />
     </div>
     <div class="flex flex-col gap-32 justify-between">
@@ -44,7 +46,7 @@ const parametres = useParametres();
       </div>
       <div class="flex gap-32 text-xs">
         <PrismicLink
-          v-for="lien in footer.data.liens"
+          v-for="lien in page.data.liens"
           :key="lien.lien.link_type"
           :field="lien.lien"
         >

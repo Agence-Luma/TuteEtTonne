@@ -46,6 +46,18 @@ export default defineNuxtConfig({
           path: '/hebergement/:uid',
         },
         {
+          type: 'coups_de_coeur',
+          path: '/coups-de-coeur',
+        },
+        {
+          type: 'page_contact',
+          path: '/contact',
+        },
+        {
+          type: 'faq_et_avis',
+          path: '/faq-et-avis',
+        },
+        {
           type: 'page',
           uid: 'home',
           path: '/',
@@ -85,13 +97,22 @@ export default defineNuxtConfig({
           16: rem(16),
           24: rem(24),
           32: rem(32),
+          45: rem(45),
           64: rem(64),
           100: rem(100),
           128: rem(128),
           200: rem(200),
         },
         boxShadow: {
+          'l': '0 4px 16px rgba(0, 0, 0, 0.15)',
           'xl': '0 45px 80px rgba(0, 10, 33, 0.05)',
+        },
+        borderRadius: {
+          'lg': '0.5rem',
+          'xl': '0.75rem',
+          '3xl': '1.5rem',
+          '4xl': '3rem',
+          'full': '9999px',
         }
       },
     }

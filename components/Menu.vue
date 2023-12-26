@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const menu = useMenu();
+const prismic = usePrismic()
+const { data: menu } = useAsyncData('$menu', () => prismic.client.getSingle('menu'));
+
 const parametres = useParametres();
 
 const showMenu = ref(false);
@@ -17,6 +19,11 @@ onMounted(() => {
   background.value?.addEventListener("click", toggleMenu);
 })
 
+const route = useRoute();
+
+watch(() => route.fullPath, () => {
+  showMenu.value = false;
+}, { deep: true, immediate: true });
 </script>
 
 <template>
@@ -41,7 +48,7 @@ onMounted(() => {
 
   <div
     v-if="menu"
-    class="bg-black h-full py-64 pr-100 pl-200 rounded-l-[60px] text-white flex justify-between fixed top-0 right-0 z-20 transition-all"
+    class="bg-black h-full py-64 pr-100 pl-200 rounded-l-[60px] text-white flex justify-between fixed top-0 right-0 z-30 transition-all"
     :class="{ 'translate-x-full': !showMenu }"
   >
     <div class="flex flex-col gap-32 justify-between items-end">
@@ -55,11 +62,13 @@ onMounted(() => {
           :field="menu.data.icone_fermer_menu"
         />
       </div>
-      <div class="flex flex-col gap-4 text-2xl text-right">
+      <div class="flex flex-col items-end gap-4 text-2xl">
         <PrismicLink
           v-for="lien in menu.data.liens"
           :key="lien.lien.link_type"
           :field="lien.lien"
+          class="hover:text-gray-300 transition-all ease-out"
+          :class="route.fullPath === lien.lien.url ? 'font-bold text-white' : 'text-gray-500'"
         >
           {{ lien.texte }}
         </PrismicLink>

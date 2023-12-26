@@ -1,13 +1,8 @@
 <script setup lang="ts">
 import { components } from "~/slices";
 
-const prismic = usePrismic();
 const route = useRoute();
-const { data: page } = useAsyncData(
-  `[coup_de_coeur-uid-${route.params.uid}]`,
-  () => prismic.client.getByUID("coup_de_coeur", route.params.uid as string),
-);
-
+const page = useCoupDeCoeur(route.params.uid);
 const parametres = useParametres();
 
 useHead({

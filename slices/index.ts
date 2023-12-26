@@ -4,6 +4,10 @@ import { defineAsyncComponent } from "vue";
 import { defineSliceZoneComponents } from "@prismicio/vue";
 
 export const components = defineSliceZoneComponents({
+  avis: defineAsyncComponent(() => import("./Avis/index.vue")),
+  foire_aux_questions: defineAsyncComponent(
+    () => import("./FoireAuxQuestions/index.vue"),
+  ),
   image_pleine_largeur: defineAsyncComponent(
     () => import("./ImagePleineLargeur/index.vue"),
   ),
@@ -20,7 +24,7 @@ export const components = defineSliceZoneComponents({
     () => import("./TexteCarousel/index.vue"),
   ),
   texte_cartes_grille: defineAsyncComponent(
-    () => import("./TexteCartesGrille/index.vue"),
+    () => import("./CoupsDeCoeur/index.vue"),
   ),
   texte_cartes_verticales: defineAsyncComponent(
     () => import("./TexteCartesVerticales/index.vue"),

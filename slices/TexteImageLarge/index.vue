@@ -15,8 +15,8 @@ defineProps(
 
 <template>
   <div
-    class="inline-block relative overflow-hidden py-s"
-    :class="slice.primary.bouton_titre && slice.primary.bouton_lien ? 'px-2xl' : 'px-xl text-center text-xl'"
+    class="inline-block relative overflow-hidden"
+    :class="slice.primary.bouton_titre && slice.primary.bouton_lien ? 'px-2xl py-s' : 'px-xl text-center text-2xl py-l'"
   >
     <div class="text-white z-10 relative flex flex-col items-center justify-between">
       <h1>{{ slice.primary.titre }}</h1>
