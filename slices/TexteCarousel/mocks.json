@@ -19,7 +19,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Pariatur consectetur laborum ex nulla duis ullamco laborum qui excepteur proident labore eu anim. Est et excepteur dolor magna esse Lorem labore. Veniam minim consectetur fugiat et nostrud ad dolore dolor minim eu esse."
+							"text": "In Lorem aliqua velit reprehenderit aliquip commodo tempor pariatur do in occaecat excepteur in incididunt."
 						}
 					}
 				]
@@ -32,7 +32,6 @@
 					[
 						"image",
 						{
-							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
 								"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
@@ -50,6 +49,9 @@
 								},
 								"background": "transparent"
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					]

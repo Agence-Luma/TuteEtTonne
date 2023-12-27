@@ -377,6 +377,21 @@ export type CoupsDeCoeurDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Item in *FAQ et avis → Carousel*
+ */
+export interface FaqEtAvisDocumentDataCarouselItem {
+  /**
+   * Image field in *FAQ et avis → Carousel*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_et_avis.carousel[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
 type FaqEtAvisDocumentDataSlicesSlice = FoireAuxQuestionsSlice | AvisSlice;
 
 /**
@@ -406,15 +421,15 @@ interface FaqEtAvisDocumentData {
   titre_deuxieme_ligne: prismic.KeyTextField;
 
   /**
-   * Image field in *FAQ et avis*
+   * Carousel field in *FAQ et avis*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: faq_et_avis.image
+   * - **API ID Path**: faq_et_avis.carousel[]
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **Documentation**: https://prismic.io/docs/field#group
    */
-  image: prismic.ImageField<never>;
+  carousel: prismic.GroupField<Simplify<FaqEtAvisDocumentDataCarouselItem>>;
 
   /**
    * Slice Zone field in *FAQ et avis*
@@ -743,6 +758,124 @@ export type HebergementDocument<Lang extends string = string> =
   >;
 
 /**
+ * Item in *Histoire → Carousel*
+ */
+export interface HistoireDocumentDataCarouselItem {
+  /**
+   * Image field in *Histoire → Carousel*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: histoire.carousel[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+type HistoireDocumentDataSlicesSlice =
+  | GrilleImagesSlice
+  | ImagePleineLargeurSlice
+  | AssemblageSlice
+  | TitreSlice
+  | ParagrapheSlice;
+
+/**
+ * Content for Histoire documents
+ */
+interface HistoireDocumentData {
+  /**
+   * Titre première ligne field in *Histoire*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: histoire.titre_premiere_ligne
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre_premiere_ligne: prismic.KeyTextField;
+
+  /**
+   * Titre deuxième ligne field in *Histoire*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: histoire.titre_deuxieme_ligne
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre_deuxieme_ligne: prismic.KeyTextField;
+
+  /**
+   * Carousel field in *Histoire*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: histoire.carousel[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  carousel: prismic.GroupField<Simplify<HistoireDocumentDataCarouselItem>>;
+
+  /**
+   * Slice Zone field in *Histoire*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: histoire.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HistoireDocumentDataSlicesSlice> /**
+   * Meta Description field in *Histoire*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: histoire.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Histoire*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: histoire.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Histoire*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: histoire.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Histoire document from Prismic
+ *
+ * - **API ID**: `histoire`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HistoireDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<HistoireDocumentData>,
+    "histoire",
+    Lang
+  >;
+
+/**
  * Item in *Menu → Liens*
  */
 export interface MenuDocumentDataLiensItem {
@@ -828,22 +961,193 @@ interface MenuDocumentData {
 export type MenuDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<MenuDocumentData>, "menu", Lang>;
 
-type PageDocumentDataSlicesSlice = never;
+/**
+ * Item in *Où sommes nous → Carousel*
+ */
+export interface OuSommesNousDocumentDataCarouselItem {
+  /**
+   * Image field in *Où sommes nous → Carousel*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: ou_sommes_nous.carousel[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+type OuSommesNousDocumentDataSlicesSlice =
+  | GrilleImagesTitresSlice
+  | TexteImageLargeSlice
+  | ImagesSimplesSlice
+  | TitreSlice
+  | ParagrapheSlice;
+
+/**
+ * Content for Où sommes nous documents
+ */
+interface OuSommesNousDocumentData {
+  /**
+   * Titre première ligne field in *Où sommes nous*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: ou_sommes_nous.titre_premiere_ligne
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre_premiere_ligne: prismic.KeyTextField;
+
+  /**
+   * Titre deuxième ligne field in *Où sommes nous*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: ou_sommes_nous.titre_deuxieme_ligne
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre_deuxieme_ligne: prismic.KeyTextField;
+
+  /**
+   * Carousel field in *Où sommes nous*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: ou_sommes_nous.carousel[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  carousel: prismic.GroupField<Simplify<OuSommesNousDocumentDataCarouselItem>>;
+
+  /**
+   * Slice Zone field in *Où sommes nous*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: ou_sommes_nous.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<OuSommesNousDocumentDataSlicesSlice> /**
+   * Meta Description field in *Où sommes nous*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: ou_sommes_nous.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Où sommes nous*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: ou_sommes_nous.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Où sommes nous*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: ou_sommes_nous.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Où sommes nous document from Prismic
+ *
+ * - **API ID**: `ou_sommes_nous`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type OuSommesNousDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<OuSommesNousDocumentData>,
+    "ou_sommes_nous",
+    Lang
+  >;
+
+/**
+ * Item in *Page → Carousel*
+ */
+export interface PageDocumentDataCarouselItem {
+  /**
+   * Image field in *Page → Carousel*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.carousel[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+type PageDocumentDataSlicesSlice =
+  | TexteCarouselSlice
+  | TarifsSlice
+  | GrilleImagesTitresSlice
+  | TexteImageLargeSlice
+  | TexteCartesVerticalesSlice
+  | ImagePleineLargeurSlice
+  | TexteCartesGrilleSlice
+  | ImagesSimplesSlice
+  | ImageTexteSlice
+  | GrilleImagesSlice
+  | TitreSlice
+  | AssemblageSlice
+  | RecommandationSlice
+  | ParagrapheSlice
+  | AvisSlice
+  | FoireAuxQuestionsSlice;
 
 /**
  * Content for Page documents
  */
 interface PageDocumentData {
   /**
-   * Title field in *Page*
+   * Titre première ligne field in *Page*
    *
-   * - **Field Type**: Title
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: page.title
+   * - **API ID Path**: page.titre_premiere_ligne
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  title: prismic.TitleField;
+  titre_premiere_ligne: prismic.KeyTextField;
+
+  /**
+   * Titre deuxième ligne field in *Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.titre_deuxieme_ligne
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre_deuxieme_ligne: prismic.KeyTextField;
+
+  /**
+   * Carousel field in *Page*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.carousel[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  carousel: prismic.GroupField<Simplify<PageDocumentDataCarouselItem>>;
 
   /**
    * Slice Zone field in *Page*
@@ -1078,10 +1382,77 @@ export type AllDocumentTypes =
   | FooterDocument
   | FormulaireDeContactDocument
   | HebergementDocument
+  | HistoireDocument
   | MenuDocument
+  | OuSommesNousDocument
   | PageDocument
   | PageContactDocument
   | ParametresDocument;
+
+/**
+ * Primary content in *Assemblage → Items*
+ */
+export interface AssemblageSliceDefaultItem {
+  /**
+   * Titre field in *Assemblage → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: assemblage.items[].titre
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre: prismic.KeyTextField;
+
+  /**
+   * Texte field in *Assemblage → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: assemblage.items[].texte
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  texte: prismic.RichTextField;
+
+  /**
+   * Image field in *Assemblage → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: assemblage.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Assemblage Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AssemblageSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<AssemblageSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Assemblage*
+ */
+type AssemblageSliceVariation = AssemblageSliceDefault;
+
+/**
+ * Assemblage Shared Slice
+ *
+ * - **API ID**: `assemblage`
+ * - **Description**: Assemblage
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AssemblageSlice = prismic.SharedSlice<
+  "assemblage",
+  AssemblageSliceVariation
+>;
 
 /**
  * Primary content in *Avis → Primary*
@@ -1231,6 +1602,191 @@ export type FoireAuxQuestionsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *GrilleImages → Primary*
+ */
+export interface GrilleImagesSliceDefaultPrimary {
+  /**
+   * Image 1 field in *GrilleImages → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: grille_images.primary.image_1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_1: prismic.ImageField<never>;
+
+  /**
+   * Image 2 field in *GrilleImages → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: grille_images.primary.image_2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_2: prismic.ImageField<never>;
+
+  /**
+   * Image 3 field in *GrilleImages → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: grille_images.primary.image_3
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_3: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for GrilleImages Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GrilleImagesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<GrilleImagesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *GrilleImages*
+ */
+type GrilleImagesSliceVariation = GrilleImagesSliceDefault;
+
+/**
+ * GrilleImages Shared Slice
+ *
+ * - **API ID**: `grille_images`
+ * - **Description**: GrilleImages
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GrilleImagesSlice = prismic.SharedSlice<
+  "grille_images",
+  GrilleImagesSliceVariation
+>;
+
+/**
+ * Primary content in *GrilleImagesTitres → Primary*
+ */
+export interface GrilleImagesTitresSliceDefaultPrimary {
+  /**
+   * Image 1 field in *GrilleImagesTitres → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: grille_images_titres.primary.image_1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_1: prismic.ImageField<never>;
+
+  /**
+   * Image 2 field in *GrilleImagesTitres → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: grille_images_titres.primary.image_2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_2: prismic.ImageField<never>;
+
+  /**
+   * Image 3 field in *GrilleImagesTitres → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: grille_images_titres.primary.image_3
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_3: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *GrilleImagesTitres → Items*
+ */
+export interface GrilleImagesTitresSliceDefaultItem {
+  /**
+   * Titre 1 field in *GrilleImagesTitres → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: grille_images_titres.items[].titre_1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre_1: prismic.KeyTextField;
+
+  /**
+   * Titre 2 field in *GrilleImagesTitres → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: grille_images_titres.items[].titre_2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titre_2: prismic.KeyTextField;
+
+  /**
+   * Image 1 field in *GrilleImagesTitres → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: grille_images_titres.items[].image_1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_1: prismic.ImageField<never>;
+
+  /**
+   * Image 2 field in *GrilleImagesTitres → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: grille_images_titres.items[].image_2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_2: prismic.ImageField<never>;
+
+  /**
+   * Image 3 field in *GrilleImagesTitres → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: grille_images_titres.items[].image_3
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_3: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for GrilleImagesTitres Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GrilleImagesTitresSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<GrilleImagesTitresSliceDefaultPrimary>,
+  Simplify<GrilleImagesTitresSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *GrilleImagesTitres*
+ */
+type GrilleImagesTitresSliceVariation = GrilleImagesTitresSliceDefault;
+
+/**
+ * GrilleImagesTitres Shared Slice
+ *
+ * - **API ID**: `grille_images_titres`
+ * - **Description**: GrilleImagesTitres
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GrilleImagesTitresSlice = prismic.SharedSlice<
+  "grille_images_titres",
+  GrilleImagesTitresSliceVariation
+>;
+
+/**
  * Primary content in *ImagePleineLargeur → Primary*
  */
 export interface ImagePleineLargeurSliceDefaultPrimary {
@@ -1287,11 +1843,41 @@ export type ImagePleineLargeurSliceImageHaute = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *ImagePleineLargeur → Primary*
+ */
+export interface ImagePleineLargeurSliceImageTresHautePrimary {
+  /**
+   * Image field in *ImagePleineLargeur → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_pleine_largeur.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Image Très Haute variation for ImagePleineLargeur Slice
+ *
+ * - **API ID**: `imageTresHaute`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImagePleineLargeurSliceImageTresHaute =
+  prismic.SharedSliceVariation<
+    "imageTresHaute",
+    Simplify<ImagePleineLargeurSliceImageTresHautePrimary>,
+    never
+  >;
+
+/**
  * Slice variation for *ImagePleineLargeur*
  */
 type ImagePleineLargeurSliceVariation =
   | ImagePleineLargeurSliceDefault
-  | ImagePleineLargeurSliceImageHaute;
+  | ImagePleineLargeurSliceImageHaute
+  | ImagePleineLargeurSliceImageTresHaute;
 
 /**
  * ImagePleineLargeur Shared Slice
@@ -1399,9 +1985,39 @@ export type ImagesSimplesSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *ImagesSimples → Items*
+ */
+export interface ImagesSimplesSliceMultiLignesItem {
+  /**
+   * Image field in *ImagesSimples → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: images_simples.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Multi-lignes variation for ImagesSimples Slice
+ *
+ * - **API ID**: `multiLignes`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImagesSimplesSliceMultiLignes = prismic.SharedSliceVariation<
+  "multiLignes",
+  Record<string, never>,
+  Simplify<ImagesSimplesSliceMultiLignesItem>
+>;
+
+/**
  * Slice variation for *ImagesSimples*
  */
-type ImagesSimplesSliceVariation = ImagesSimplesSliceDefault;
+type ImagesSimplesSliceVariation =
+  | ImagesSimplesSliceDefault
+  | ImagesSimplesSliceMultiLignes;
 
 /**
  * ImagesSimples Shared Slice
@@ -1961,9 +2577,49 @@ export type TexteImageLargeSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *TexteImageLarge → Primary*
+ */
+export interface TexteImageLargeSliceTexteSeulPrimary {
+  /**
+   * Texte field in *TexteImageLarge → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: texte_image_large.primary.texte
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  texte: prismic.RichTextField;
+
+  /**
+   * Image field in *TexteImageLarge → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: texte_image_large.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * TexteSeul variation for TexteImageLarge Slice
+ *
+ * - **API ID**: `texteSeul`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TexteImageLargeSliceTexteSeul = prismic.SharedSliceVariation<
+  "texteSeul",
+  Simplify<TexteImageLargeSliceTexteSeulPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *TexteImageLarge*
  */
-type TexteImageLargeSliceVariation = TexteImageLargeSliceDefault;
+type TexteImageLargeSliceVariation =
+  | TexteImageLargeSliceDefault
+  | TexteImageLargeSliceTexteSeul;
 
 /**
  * TexteImageLarge Shared Slice
@@ -2053,6 +2709,7 @@ declare module "@prismicio/client" {
       CoupsDeCoeurDocumentDataSlicesSlice,
       FaqEtAvisDocument,
       FaqEtAvisDocumentData,
+      FaqEtAvisDocumentDataCarouselItem,
       FaqEtAvisDocumentDataSlicesSlice,
       FooterDocument,
       FooterDocumentData,
@@ -2064,11 +2721,20 @@ declare module "@prismicio/client" {
       HebergementDocumentData,
       HebergementDocumentDataCarouselItem,
       HebergementDocumentDataSlicesSlice,
+      HistoireDocument,
+      HistoireDocumentData,
+      HistoireDocumentDataCarouselItem,
+      HistoireDocumentDataSlicesSlice,
       MenuDocument,
       MenuDocumentData,
       MenuDocumentDataLiensItem,
+      OuSommesNousDocument,
+      OuSommesNousDocumentData,
+      OuSommesNousDocumentDataCarouselItem,
+      OuSommesNousDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
+      PageDocumentDataCarouselItem,
       PageDocumentDataSlicesSlice,
       PageContactDocument,
       PageContactDocumentData,
@@ -2077,6 +2743,10 @@ declare module "@prismicio/client" {
       ParametresDocumentData,
       ParametresDocumentDataReseauxSociauxItem,
       AllDocumentTypes,
+      AssemblageSlice,
+      AssemblageSliceDefaultItem,
+      AssemblageSliceVariation,
+      AssemblageSliceDefault,
       AvisSlice,
       AvisSliceDefaultPrimary,
       AvisSliceDefaultItem,
@@ -2087,20 +2757,33 @@ declare module "@prismicio/client" {
       FoireAuxQuestionsSliceDefaultItem,
       FoireAuxQuestionsSliceVariation,
       FoireAuxQuestionsSliceDefault,
+      GrilleImagesSlice,
+      GrilleImagesSliceDefaultPrimary,
+      GrilleImagesSliceVariation,
+      GrilleImagesSliceDefault,
+      GrilleImagesTitresSlice,
+      GrilleImagesTitresSliceDefaultPrimary,
+      GrilleImagesTitresSliceDefaultItem,
+      GrilleImagesTitresSliceVariation,
+      GrilleImagesTitresSliceDefault,
       ImagePleineLargeurSlice,
       ImagePleineLargeurSliceDefaultPrimary,
       ImagePleineLargeurSliceImageHautePrimary,
+      ImagePleineLargeurSliceImageTresHautePrimary,
       ImagePleineLargeurSliceVariation,
       ImagePleineLargeurSliceDefault,
       ImagePleineLargeurSliceImageHaute,
+      ImagePleineLargeurSliceImageTresHaute,
       ImageTexteSlice,
       ImageTexteSliceDefaultPrimary,
       ImageTexteSliceVariation,
       ImageTexteSliceDefault,
       ImagesSimplesSlice,
       ImagesSimplesSliceDefaultItem,
+      ImagesSimplesSliceMultiLignesItem,
       ImagesSimplesSliceVariation,
       ImagesSimplesSliceDefault,
+      ImagesSimplesSliceMultiLignes,
       ParagrapheSlice,
       ParagrapheSliceDefaultPrimary,
       ParagrapheSliceVariation,
@@ -2131,8 +2814,10 @@ declare module "@prismicio/client" {
       TexteCartesVerticalesSliceDefault,
       TexteImageLargeSlice,
       TexteImageLargeSliceDefaultPrimary,
+      TexteImageLargeSliceTexteSeulPrimary,
       TexteImageLargeSliceVariation,
       TexteImageLargeSliceDefault,
+      TexteImageLargeSliceTexteSeul,
       TitreSlice,
       TitreSliceDefaultPrimary,
       TitreSliceVariation,

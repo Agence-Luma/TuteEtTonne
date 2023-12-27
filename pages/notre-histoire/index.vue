@@ -2,7 +2,10 @@
 import { components } from "~/slices";
 
 const prismic = usePrismic();
-const { data: page } = useAsyncData('[faq_et_avis]', () => prismic.client.getSingle('faq_et_avis'));
+const { data: page } = useAsyncData('[histoire]', () => prismic.client.getSingle('histoire'));
+
+console.log(page);
+
 
 const parametres = useParametres();
 
@@ -21,7 +24,6 @@ useHead({
     />
     <SliceZone
       wrapper="main"
-      class="pb-s"
       :slices="page?.data.slices ?? []"
       :components="components"
     />

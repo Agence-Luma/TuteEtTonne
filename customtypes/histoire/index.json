@@ -1,6 +1,6 @@
 {
-  "id": "faq_et_avis",
-  "label": "FAQ et avis",
+  "id": "histoire",
+  "label": "Histoire",
   "format": "page",
   "repeatable": false,
   "status": true,
@@ -41,10 +41,19 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "foire_aux_questions": {
+            "grille_images": {
               "type": "SharedSlice"
             },
-            "avis": {
+            "image_pleine_largeur": {
+              "type": "SharedSlice"
+            },
+            "assemblage": {
+              "type": "SharedSlice"
+            },
+            "titre": {
+              "type": "SharedSlice"
+            },
+            "paragraphe": {
               "type": "SharedSlice"
             }
           }

@@ -1,8 +1,8 @@
 {
-  "id": "images_simples",
+  "id": "grille_images",
   "type": "SharedSlice",
-  "name": "ImagesSimples",
-  "description": "ImagesSimples",
+  "name": "GrilleImages",
+  "description": "GrilleImages",
   "variations": [
     {
       "id": "default",
@@ -11,36 +11,33 @@
       "version": "initial",
       "description": "Default",
       "imageUrl": "",
-      "primary": {},
-      "items": {
-        "image": {
+      "primary": {
+        "image_1": {
           "type": "Image",
           "config": {
-            "label": "Image",
+            "label": "Image 1",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_2": {
+          "type": "Image",
+          "config": {
+            "label": "Image 2",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_3": {
+          "type": "Image",
+          "config": {
+            "label": "Image 3",
             "constraint": {},
             "thumbnails": []
           }
         }
-      }
-    },
-    {
-      "id": "multiLignes",
-      "name": "Multi-lignes",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {},
-      "items": {
-        "image": {
-          "type": "Image",
-          "config": {
-            "label": "Image",
-            "constraint": {},
-            "thumbnails": []
-          }
-        }
-      }
+      },
+      "items": {}
     }
   ]
 }

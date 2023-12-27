@@ -15,6 +15,7 @@ defineProps(
 
 <template>
   <div
+    v-if="slice.variation === 'default'"
     class="inline-block relative overflow-hidden"
     :class="slice.primary.bouton_titre && slice.primary.bouton_lien ? 'px-2xl py-s' : 'px-xl text-center text-2xl py-l'"
   >
@@ -31,6 +32,19 @@ defineProps(
         :lien="slice.primary.bouton_lien"
       />
     </div>
+    <PrismicImage
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 object-cover min-w-full min-h-full brightness-[0.35]"
+      :field="slice.primary.image"
+    />
+  </div>
+  <div
+    v-else-if="slice.variation === 'texteSeul'"
+    class="inline-block relative overflow-hidden px-2xl py-l"
+  >
+    <PrismicRichText
+      class="text-white relative z-10"
+      :field="slice.primary.texte"
+    />
     <PrismicImage
       class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 object-cover min-w-full min-h-full brightness-[0.35]"
       :field="slice.primary.image"

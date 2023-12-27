@@ -24,7 +24,10 @@ const opened = ref(false);
       @click="opened = !opened"
     >
       <div class="w-full flex justify-between gap-32 items-center">
-        <p class="font-bold grow" style="flex-basis: min-content;">
+        <p
+          class="font-bold grow"
+          style="flex-basis: min-content;"
+        >
           {{ titre }}
         </p>
         <div

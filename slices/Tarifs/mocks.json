@@ -14,13 +14,12 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Velit nostrud irure culpa sunt dolor consequat sit nostrud Lorem reprehenderit nisi culpa."
+							"text": "Cillum ipsum velit nisi aute adipisicing nulla. Aliquip magna reprehenderit ex consequat laborum sint tempor ex nostrud laboris ut elit amet. Minim ipsum incididunt non veniam in."
 						}
 					}
 				]
 			},
 			"image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
@@ -38,6 +37,9 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},

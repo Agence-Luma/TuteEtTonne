@@ -13,20 +13,90 @@
           "placeholder": ""
         }
       },
-      "title": {
-        "type": "StructuredText",
+      "titre_premiere_ligne": {
+        "type": "Text",
         "config": {
-          "label": "Title",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "single": "heading1"
+          "label": "Titre première ligne",
+          "placeholder": ""
+        }
+      },
+      "titre_deuxieme_ligne": {
+        "type": "Text",
+        "config": {
+          "label": "Titre deuxième ligne",
+          "placeholder": ""
+        }
+      },
+      "carousel": {
+        "type": "Group",
+        "config": {
+          "label": "Carousel",
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": {
+                "label": "Image",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
         }
       },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "texte_carousel": {
+              "type": "SharedSlice"
+            },
+            "tarifs": {
+              "type": "SharedSlice"
+            },
+            "grille_images_titres": {
+              "type": "SharedSlice"
+            },
+            "texte_image_large": {
+              "type": "SharedSlice"
+            },
+            "texte_cartes_verticales": {
+              "type": "SharedSlice"
+            },
+            "image_pleine_largeur": {
+              "type": "SharedSlice"
+            },
+            "texte_cartes_grille": {
+              "type": "SharedSlice"
+            },
+            "images_simples": {
+              "type": "SharedSlice"
+            },
+            "image_texte": {
+              "type": "SharedSlice"
+            },
+            "grille_images": {
+              "type": "SharedSlice"
+            },
+            "titre": {
+              "type": "SharedSlice"
+            },
+            "assemblage": {
+              "type": "SharedSlice"
+            },
+            "recommandation": {
+              "type": "SharedSlice"
+            },
+            "paragraphe": {
+              "type": "SharedSlice"
+            },
+            "avis": {
+              "type": "SharedSlice"
+            },
+            "foire_aux_questions": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     }

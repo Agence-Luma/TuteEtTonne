@@ -41,6 +41,25 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "imageTresHaute",
+      "name": "Image Très Haute",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

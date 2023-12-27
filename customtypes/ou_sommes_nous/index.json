@@ -1,6 +1,6 @@
 {
-  "id": "faq_et_avis",
-  "label": "FAQ et avis",
+  "id": "ou_sommes_nous",
+  "label": "Où sommes nous",
   "format": "page",
   "repeatable": false,
   "status": true,
@@ -41,10 +41,19 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "foire_aux_questions": {
+            "grille_images_titres": {
               "type": "SharedSlice"
             },
-            "avis": {
+            "texte_image_large": {
+              "type": "SharedSlice"
+            },
+            "images_simples": {
+              "type": "SharedSlice"
+            },
+            "titre": {
+              "type": "SharedSlice"
+            },
+            "paragraphe": {
               "type": "SharedSlice"
             }
           }

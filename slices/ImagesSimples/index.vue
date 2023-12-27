@@ -15,6 +15,7 @@ defineProps(
 
 <template>
   <div
+    v-if="slice.variation === 'default'"
     class="w-screen px-1/2xl py-xs grid gap-32"
     :class="{
       'grid-cols-1': slice.items.length === 1,
@@ -31,5 +32,34 @@ defineProps(
       class="w-full shadow-xl rounded"
       :field="item.image"
     />
+  </div>
+  <div
+    v-else-if="slice.variation === 'multiLignes'"
+    class="w-screen px-1/2xl py-s grid gap-32 grid-cols-3"
+  >
+    <div class="flex flex-col gap-32">
+      <PrismicImage
+        v-for="item in slice.items.filter((_, index) => index % 3 === 0)"
+        :key="item.id"
+        class="w-full shadow-xl rounded"
+        :field="item.image"
+      />
+    </div>
+    <div class="flex flex-col gap-32">
+      <PrismicImage
+        v-for="item in slice.items.filter((_, index) => index % 3 === 1)"
+        :key="item.id"
+        class="w-full shadow-xl rounded"
+        :field="item.image"
+      />
+    </div>
+    <div class="flex flex-col gap-32">
+      <PrismicImage
+        v-for="item in slice.items.filter((_, index) => index % 3 === 2)"
+        :key="item.id"
+        class="w-full shadow-xl rounded"
+        :field="item.image"
+      />
+    </div>
   </div>
 </template>

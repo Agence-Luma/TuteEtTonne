@@ -58,6 +58,14 @@ export default defineNuxtConfig({
           path: '/faq-et-avis',
         },
         {
+          type: 'histoire',
+          path: '/notre-histoire',
+        },
+        {
+          type: 'ou_sommes_nous',
+          path: '/ou-sommes-nous',
+        },
+        {
           type: 'page',
           uid: 'home',
           path: '/',
