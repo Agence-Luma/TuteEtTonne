@@ -17,13 +17,17 @@ defineProps(
   <div
     v-if="slice.variation === 'default'"
     class="inline-block relative overflow-hidden"
-    :class="slice.primary.bouton_titre && slice.primary.bouton_lien ? 'px-2xl py-s' : 'px-xl text-center text-2xl py-l'"
+    :class="slice.primary.bouton_titre && slice.primary.bouton_lien ? 'px-xs lg:px-2xl xl:px-3xl py-s' : 'px-xs py-s lg:px-xl xl:px-2xl text-center text-2xl lg:py-l'"
   >
     <div class="text-white z-10 relative flex flex-col items-center justify-between">
-      <h1>{{ slice.primary.titre }}</h1>
+      <h1
+        v-if="slice.primary.titre"
+        class="text-center lg:text-start leading-[0.5] lg:leading-none mb-64 lg:mb-16"
+      >
+        {{ slice.primary.titre }}
+      </h1>
       <PrismicRichText
-        class="mt-16"
-        :class="slice.primary.bouton_titre && slice.primary.bouton_lien ? 'mb-64' : 'mb-16'"
+        :class="slice.primary.bouton_titre && slice.primary.bouton_lien ? 'mb-64' : ''"
         :field="slice.primary.texte"
       />
       <Bouton
@@ -39,7 +43,7 @@ defineProps(
   </div>
   <div
     v-else-if="slice.variation === 'texteSeul'"
-    class="inline-block relative overflow-hidden px-2xl py-l"
+    class="inline-block relative overflow-hidden px-xs lg:px-2xl xl:px-3xl py-s lg:py-l"
   >
     <PrismicRichText
       class="text-white relative z-10"

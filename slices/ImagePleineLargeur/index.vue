@@ -16,7 +16,7 @@ defineProps(
 <template>
   <div
     v-if="slice.variation === 'default'"
-    class="w-screen my-s h-[300px] overflow-hidden relative"
+    class="w-full my-xs lg:my-s h-[300px] overflow-hidden relative"
   >
     <PrismicImage
       class="absolute inset-0 w-full h-full object-cover"
@@ -25,7 +25,7 @@ defineProps(
   </div>
   <div
     v-else-if="slice.variation === 'imageHaute'"
-    class="w-screen h-[500px] overflow-hidden relative"
+    class="w-full h-[500px] overflow-hidden relative"
   >
     <PrismicImage
       class="absolute inset-0 w-full h-full object-cover"
@@ -34,7 +34,7 @@ defineProps(
   </div>
   <div
     v-else-if="slice.variation === 'imageTresHaute'"
-    class="w-screen h-[600px] overflow-hidden relative rounded-t-[40px]"
+    class="w-full h-[600px] overflow-hidden relative rounded-t-[40px]"
   >
     <PrismicImage
       class="absolute inset-0 w-full h-full object-cover"

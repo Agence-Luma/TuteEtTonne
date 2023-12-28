@@ -97,6 +97,7 @@ export default defineNuxtConfig({
           xl: rem(150),
           '1/2xl': rem(200),
           '2xl': rem(300),
+          '3xl': rem(400),
           0: 0,
           2: rem(2),
           4: rem(4),

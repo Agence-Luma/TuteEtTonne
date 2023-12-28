@@ -14,17 +14,17 @@ defineProps(
 </script>
 
 <template>
-  <div class="w-screen my-s h-[400px] overflow-hidden relative flex gap-16">
+  <div class="w-full my-s lg:h-[400px] overflow-hidden relative flex flex-col lg:flex-row gap-16">
     <PrismicImage
-      class="inset-0 w-[40%] h-full object-cover"
+      class="inset-0 w-full lg:w-[40%] h-full object-cover"
       :field="slice.primary.image_1"
     />
     <PrismicImage
-      class="inset-0 w-[30%] h-full object-cover"
+      class="inset-0 w-full lg:w-[30%] h-full object-cover"
       :field="slice.primary.image_2"
     />
     <PrismicImage
-      class="inset-0 w-[30%] h-full object-cover"
+      class="inset-0 w-full lg:w-[30%] h-full object-cover"
       :field="slice.primary.image_3"
     />
   </div>

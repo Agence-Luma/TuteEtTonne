@@ -14,7 +14,7 @@ defineProps(
 </script>
 
 <template>
-  <div class="px-2xl py-xs">
+  <div class="px-xs lg:px-2xl xl:px-3xl py-xs">
     <p v-if="slice.primary.titre" class="font-bold text-xl mb-32">
       {{ slice.primary.titre }}
     </p>

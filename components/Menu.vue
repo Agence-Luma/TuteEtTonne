@@ -30,7 +30,7 @@ watch(() => route.fullPath, () => {
   <div
     v-if="menu"
     ref="openButton"
-    class="flex flex-col gap-8 items-center fixed top-64 right-64 hover:cursor-pointer z-20"
+    class="flex flex-col gap-8 items-center fixed top-[80px] right-32 lg:top-64 lg:right-64 hover:cursor-pointer z-20"
   >
     <PrismicImage
       v-if="menu.data.icone_ouvrir_menu"
@@ -48,10 +48,10 @@ watch(() => route.fullPath, () => {
 
   <div
     v-if="menu"
-    class="bg-black h-full py-64 pr-100 pl-200 rounded-l-[60px] text-white flex justify-between fixed top-0 right-0 z-30 transition-all"
+    class="bg-black h-screen lg:h-full w-[90vw] lg:w-auto py-64 px-xs lg:pr-100 lg:pl-200 rounded-l-[60px] text-white flex justify-between fixed top-0 right-0 z-30 transition-all"
     :class="{ 'translate-x-full': !showMenu }"
   >
-    <div class="flex flex-col gap-32 justify-between items-end">
+    <div class="w-full lg:w-auto flex flex-col gap-32 justify-between items-end">
       <div
         ref="closeButton"
         class="hover:cursor-pointer"
@@ -62,7 +62,7 @@ watch(() => route.fullPath, () => {
           :field="menu.data.icone_fermer_menu"
         />
       </div>
-      <div class="flex flex-col items-end gap-4 text-2xl">
+      <div class="flex flex-col items-end gap-8 lg:gap-4 text-2xl">
         <PrismicLink
           v-for="lien in menu.data.liens"
           :key="lien.lien.link_type"
@@ -74,7 +74,7 @@ watch(() => route.fullPath, () => {
         </PrismicLink>
       </div>
       <div class="flex flex-col gap-24">
-        <div class="text-xs text-right font-bold">
+        <div class="text-s lg:text-xs text-right font-bold">
           <p v-if="parametres?.data.telephone">
             <a :href="`tel:${parametres.data.telephone}`">{{ parametres.data.telephone }}</a>
           </p>
@@ -86,11 +86,12 @@ watch(() => route.fullPath, () => {
           <PrismicLink
             v-for="lien in parametres?.data.reseaux_sociaux"
             :key="lien.lien.link_type"
-            class="w-24"
+            class="w-32 lg:w-24"
             :field="lien.lien"
           >
             <PrismicImage
               v-if="lien.logo"
+              class="w-32 lg:w-24"
               :field="lien.logo"
             />
           </PrismicLink>

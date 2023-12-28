@@ -20,17 +20,17 @@ props.slice.items.forEach((item) => {
 </script>
 
 <template>
-  <div class="px-xl py-l">
+  <div class="px-xs py-s lg:px-xl xl:px-2xl lg:py-l">
     <TitreDouble
       v-if="slice.primary.titre_premiere_ligne && slice.primary.titre_deuxieme_ligne"
       :premiere-ligne="slice.primary.titre_premiere_ligne"
       :deuxieme-ligne="slice.primary.titre_deuxieme_ligne"
     />
     <PrismicRichText
-      class="mt-32 mb-64"
+      class="mt-64 lg:mt-32 mb-64 xl:pr-l"
       :field="slice.primary.texte"
     />
-    <div class="grid grid-cols-2 gap-32">
+    <div class="flex flex-col lg:grid lg:grid-cols-2 gap-32">
       <CarteHorizontale
         v-for="carte in cartes"
         :key="carte.uid"

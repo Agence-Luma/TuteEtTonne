@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="inline-block relative w-1/3 rounded-3xl overflow-hidden">
+  <div class="inline-block relative w-full lg:w-1/3 rounded-3xl overflow-hidden">
     <div class="text-white z-10 relative flex flex-col items-center justify-between py-64 gap-32">
       <h1>
         {{ carte.titre }}

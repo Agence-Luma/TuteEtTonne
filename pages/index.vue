@@ -27,7 +27,7 @@ useHead({
     <Formulaire
       v-if="page.data.formulaire_de_contact"
       :formulaire="page.data.formulaire_de_contact"
-      class="px-2xl"
+      class="px-xs lg:px-2xl xl:px-3xl"
     />
   </div>
 </template>

@@ -36,14 +36,14 @@ const nextSlide = () => {
   <div
     class="text-white relative"
     :class="{
-      'h-[90vh] w-[85%]': fullHeight,
-      'mt-[20vh] h-[70vh] w-[95%]': !fullHeight
+      'h-[90vh] w-full lg:w-[85%]': fullHeight,
+      'h-[90vh] w-full lg:mt-[20vh] lg:h-[70vh] lg:w-[95%] xl:w-[85%]': !fullHeight
     }"
   >
     <div class="z-10 relative w-full h-full flex items-center justify-center pointer-events-none">
       <TitreDouble
         class="pointer-events-auto"
-        :class="{ 'ml-[50vw]': !fullHeight }"
+        :class="{ 'ml-0 lg:ml-[50vw]': !fullHeight }"
         :premiere-ligne="titrePremiereLigne"
         :deuxieme-ligne="titreDeuxiemeLigne"
       />
@@ -51,8 +51,8 @@ const nextSlide = () => {
         v-if="parametres && parametres.data.logo"
         class="bg-black rounded-full absolute pointer-events-auto"
         :class="{
-          'bottom-[50px] -right-[100px] w-[200px]': fullHeight,
-          '-top-[125px] left-[150px] w-[250px]': !fullHeight
+          'top-[50px] left-[50px] w-[100px] lg:top-auto lg:left-auto lg:bottom-[50px] lg:-right-[100px] lg:w-[200px]': fullHeight,
+          'top-[50px] left-[50px] w-[100px] lg:-top-[125px] lg:left-[150px] lg:w-[250px]': !fullHeight
         }"
         :field="accueil"
       >
@@ -64,7 +64,7 @@ const nextSlide = () => {
     </div>
     <div
       v-if="images.length === 1"
-      class="absolute top-0 left-0 z-0 object-cover rounded-r-[60px] overflow-hidden w-full h-full brightness-[0.6] flex items-center justify-center"
+      class="absolute top-0 left-0 z-0 object-cover rounded-b-[60px] lg:rounded-bl-[0px] lg:rounded-r-[60px] overflow-hidden w-full h-full brightness-[0.6] flex items-center justify-center"
     >
       <PrismicImage
         class="object-cover min-w-full min-h-full"
@@ -73,7 +73,7 @@ const nextSlide = () => {
     </div>
     <div
       v-else
-      class="absolute top-0 left-0 z-0 object-cover rounded-r-[60px] overflow-hidden w-full h-full"
+      class="absolute top-0 left-0 z-0 object-cover rounded-b-[60px] lg:rounded-bl-[0px] lg:rounded-r-[60px] overflow-hidden w-full h-full"
     >
       <Carousel
         ref="carousel"
@@ -95,7 +95,7 @@ const nextSlide = () => {
       <div
         class="absolute top-0 left-0 w-full h-full flex justify-between pointer-events-none px-64"
         :class="{
-          'items-center': fullHeight,
+          'items-end pb-64 lg:items-center lg:pb-0': fullHeight,
           'items-end pb-64': !fullHeight
         }"
       >

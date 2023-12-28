@@ -14,10 +14,10 @@ defineProps(
 </script>
 
 <template>
-  <div class="inline-block relative overflow-hidden px-l pt-xs pb-s w-full">
-    <div class="text-white z-10 relative flex flex-col items-center justify-between gap-16">
+  <div class="inline-block relative overflow-hidden px-xs py-s lg:px-l lg:pt-xs lg:pb-s w-full">
+    <div class="text-white z-10 relative flex flex-col items-center justify-between gap-32 lg:gap-16">
       <h1>{{ slice.primary.titre }}</h1>
-      <div class="flex justify-between items-center gap-64 mb-16">
+      <div class="flex flex-col lg:flex-row justify-between items-center gap-32 lg:gap-64 mb-16">
         <div
           v-for="item in slice.items"
           :key="item.prix"
@@ -28,7 +28,7 @@ defineProps(
         </div>
       </div>
       <PrismicRichText
-        class="my-16"
+        class="my-16 lg:px-2xl xl:px-3xl text-center"
         :field="slice.primary.texte"
       />
     </div>

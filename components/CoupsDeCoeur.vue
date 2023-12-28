@@ -11,11 +11,11 @@ const selectedCategories = computed(() => {
 </script>
 
 <template>
-  <div class="py-s px-l flex flex-col items-center justify-center gap-32 mb-64">
+  <div class="py-s px-xs lg:px-l flex flex-col items-center justify-center gap-32 mb-64">
     <p class="font-bold text-3xl">
       Filtres
     </p>
-    <div class="flex justify-center items-center gap-32">
+    <div class="flex flex-wrap justify-center items-center gap-16 lg:gap-32">
       <div
         class="px-32 py-16 shadow-l rounded-xl font-bold hover:cursor-pointer"
         :class="selected === null ? 'bg-black text-white' : 'bg-white text-black hover:bg-gray-50'"
@@ -33,10 +33,11 @@ const selectedCategories = computed(() => {
         {{ categorie }}
       </div>
     </div>
-    <div class="flex gap-32 flex-wrap justify-center mt-32">
-      <div
+    <div class="flex gap-64 flex-wrap justify-center mt-32">
+      <PrismicLink
         v-for="item in selectedCategories"
         :key="item.uid"
+        :field="item"
         class="w-[300px] bg-white shadow-l rounded-3xl relative"
       >
         <div class="w-full h-[200px] overflow-hidden relative rounded-3xl">
@@ -46,16 +47,16 @@ const selectedCategories = computed(() => {
           />
         </div>
         <p class="font-bold text-center text-xl pt-32 pb-45">{{ item.data.titre_premiere_ligne }}</p>
-        <PrismicLink
+        <p
           :field="item"
           class="absolute -bottom-[5%] left-1/2 -translate-x-1/2 w-1/2 text-center py-8 bg-black text-white font-bold rounded-lg border border-transparent hover:bg-white hover:border-black hover:text-black transition-all"
         >
           Découvrir
-        </PrismicLink>
+        </p>
         <p class="absolute top-[20px] left-[20px] text-white bg-black py-8 px-16 rounded-xl text-xs uppercase font-bold opacity-75">
           {{ item.data.categorie }}
         </p>
-      </div>
+      </PrismicLink>
     </div>
   </div>
 </template>

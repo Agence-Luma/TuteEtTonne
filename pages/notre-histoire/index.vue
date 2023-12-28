@@ -4,9 +4,6 @@ import { components } from "~/slices";
 const prismic = usePrismic();
 const { data: page } = useAsyncData('[histoire]', () => prismic.client.getSingle('histoire'));
 
-console.log(page);
-
-
 const parametres = useParametres();
 
 useHead({

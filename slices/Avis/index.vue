@@ -14,13 +14,38 @@ defineProps(
 </script>
 
 <template>
-  <div class="px-xl py-s text-white bg-black w-full overflow-hidden flex flex-col gap-32">
+  <div class="px-xs lg:px-xl xl:px-2xl py-s text-white bg-black w-full overflow-hidden flex flex-col gap-32">
     <h1 v-if="slice.primary.titre">
       {{ slice.primary.titre }}
     </h1>
     <Carousel
       :items-to-show="2"
-      class="w-full cursor-grab"
+      class="w-full cursor-grab hidden lg:block"
+    >
+      <Slide
+        v-for="avis in slice.items"
+        :key="avis.id"
+        class="px-16"
+      >
+        <div class="w-full h-full border border-gray-500 rounded-4xl px-32 py-45 flex flex-col justify-center gap-16">
+          <PrismicRichText
+            v-if="avis.texte"
+            :field="avis.texte"
+            class="text-left text-xs text-gray-200"
+          />
+          <p class="text-right">
+            {{ avis.auteur }}
+          </p>
+        </div>
+      </Slide>
+
+      <template #addons>
+        <Pagination />
+      </template>
+    </Carousel>
+    <Carousel
+      :items-to-show="1"
+      class="w-full cursor-grab block lg:hidden"
     >
       <Slide
         v-for="avis in slice.items"

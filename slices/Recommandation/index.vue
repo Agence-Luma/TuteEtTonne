@@ -22,7 +22,7 @@ const recommanded = computed(() => page.value);
 </script>
 
 <template>
-  <div class="w-full mt-s py-l bg-black text-white px-xl flex items-center gap-200">
+  <div class="w-full mt-s py-s lg:py-l bg-black text-white px-xs lg:px-xl xl:px-2xl flex items-center flex-col lg:flex-row gap-64 lg:gap-200">
     <TitreDouble
       v-if="slice.primary.titre_premiere_ligne && slice.primary.titre_deuxieme_ligne"
       :premiere-ligne="slice.primary.titre_premiere_ligne"

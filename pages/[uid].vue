@@ -9,9 +9,6 @@ const { data: page } = useAsyncData(route.params.uid as string, () =>
 
 const parametres = useParametres();
 
-console.log(page);
-
-
 useHead({
   title: computed(() => `${page.value?.data.titre_premiere_ligne} ${page.value?.data.titre_deuxieme_ligne} | ${parametres.value?.data.titre_du_site}`)
 })

@@ -24,10 +24,10 @@ const nextSlide = () => {
 </script>
 
 <template>
-  <div class="relative w-full h-screen">
+  <div class="relative w-full h-full">
     <div
       v-if="slice.items.length === 1"
-      class="overflow-hidden w-full h-full"
+      class="overflow-hidden w-full h-screen"
     >
       <PrismicImage
         class="object-cover min-w-full min-h-full"
@@ -36,7 +36,7 @@ const nextSlide = () => {
     </div>
     <div
       v-else
-      class="overflow-hidden w-full h-full relative"
+      class="overflow-hidden w-full h-screen relative"
     >
       <Carousel
         ref="carousel"
@@ -56,13 +56,13 @@ const nextSlide = () => {
       </Carousel>
 
       <div
-        class="absolute top-0 right-0 w-1/2 h-full flex justify-between pointer-events-none px-64 items-end pb-64"
+        class="absolute top-0 right-0 w-full lg:w-1/2 h-full flex justify-between pointer-events-none px-64 items-end pb-64"
       >
         <BoutonRond :click="prevSlide"><img class="w-6 rotate-180 mr-2" src="/images/arrow.png" /></BoutonRond>
         <BoutonRond :click="nextSlide"><img class="w-6 ml-2" src="/images/arrow.png" /></BoutonRond>
       </div>
     </div>
-    <div class="bg-black rounded-3xl p-32 text-white flex flex-col items-center gap-32 w-[450px] absolute -bottom-[15%] left-[10%]">
+    <div class="bg-black lg:rounded-3xl px-xs py-s lg:p-32 text-white flex flex-col items-center gap-32 w-full lg:w-[450px] relative lg:absolute lg:-bottom-[15%] lg:left-[10%]">
       <TitreDouble
         v-if="slice.primary.titre_premiere_ligne && slice.primary.titre_deuxieme_ligne"
         :premiere-ligne="slice.primary.titre_premiere_ligne"
