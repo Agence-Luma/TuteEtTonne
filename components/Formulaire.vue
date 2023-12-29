@@ -153,7 +153,7 @@ const showNotif = (msg: string, time = 5000, success = false) => {
   </div>
   <div
     ref="notif"
-    class="fixed bottom-64 right-64 p-16 rounded-lg z-20 border-2 font-bold opacity-0 transition-all w-[400px]"
+    class="fixed bottom-64 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:right-64 p-16 rounded-lg z-20 border-2 font-bold opacity-0 transition-all w-[90vw] lg:w-[400px]"
     :class="{
       'opacity-100': notifShow,
       'border-green-100 text-green-400 bg-green-50': notifSuccess,

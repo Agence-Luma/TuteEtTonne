@@ -36,13 +36,13 @@ const nextSlide = () => {
   <div
     class="text-white relative"
     :class="{
-      'h-[90vh] w-full lg:w-[85%]': fullHeight,
-      'h-[90vh] w-full lg:mt-[20vh] lg:h-[70vh] lg:w-[95%] xl:w-[85%]': !fullHeight
+      'h-[80vh] w-full lg:h-[90vh] lg:w-[85%]': fullHeight,
+      'h-[80vh] w-full lg:mt-[20vh] lg:h-[70vh] lg:w-[95%] xl:w-[85%]': !fullHeight
     }"
   >
     <div class="z-10 relative w-full h-full flex items-center justify-center pointer-events-none">
       <TitreDouble
-        class="pointer-events-auto"
+        class="pointer-events-auto px-xs lg:px-0"
         :class="{ 'ml-0 lg:ml-[50vw]': !fullHeight }"
         :premiere-ligne="titrePremiereLigne"
         :deuxieme-ligne="titreDeuxiemeLigne"
