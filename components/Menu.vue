@@ -51,7 +51,7 @@ if (process.client){
   <div
     v-if="menu"
     class="w-full lg:w-auto flex justify-between px-32 py-16 lg:p-0 fixed top-0 right-0 lg:top-64 lg:right-64 hover:cursor-pointer z-20 transition-all lg:transition-none"
-    :class="{ 'bg-white shadow-l': hasScrolled }"
+    :class="{ 'bg-white shadow-l lg:bg-transparent lg:shadow-none': hasScrolled }"
   >
     <div
       ref="openDesktop"

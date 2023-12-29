@@ -115,6 +115,7 @@ export default defineNuxtConfig({
         boxShadow: {
           'l': '0 4px 16px rgba(0, 0, 0, 0.15)',
           'xl': '0 45px 80px rgba(0, 10, 33, 0.05)',
+          'none': '0 0 #0000'
         },
         borderRadius: {
           'lg': '0.5rem',
