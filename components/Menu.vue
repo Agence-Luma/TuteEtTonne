@@ -3,9 +3,11 @@ const prismic = usePrismic()
 const { data: menu } = useAsyncData('$menu', () => prismic.client.getSingle('menu'));
 
 const parametres = useParametres();
+const accueil = useAccueil();
 
 const showMenu = ref(false);
-const openButton = ref<HTMLDivElement | null>(null);
+const openDesktop = ref<HTMLDivElement | null>(null);
+const openMobile = ref<HTMLDivElement | null>(null);
 const closeButton = ref<HTMLDivElement | null>(null);
 const background = ref<HTMLDivElement | null>(null);
 
@@ -14,9 +16,18 @@ const toggleMenu = () => {
 };
 
 onMounted(() => {
-  openButton.value?.addEventListener("click", toggleMenu);
+  openDesktop.value?.addEventListener("click", toggleMenu);
+  openMobile.value?.addEventListener("click", toggleMenu);
   closeButton.value?.addEventListener("click", toggleMenu);
   background.value?.addEventListener("click", toggleMenu);
+})
+
+onUnmounted(() => {
+  openDesktop.value?.removeEventListener("click", toggleMenu);
+  openMobile.value?.removeEventListener("click", toggleMenu);
+  closeButton.value?.removeEventListener("click", toggleMenu);
+  background.value?.removeEventListener("click", toggleMenu);
+  window.removeEventListener('scroll', handleScroll);
 })
 
 const route = useRoute();
@@ -24,20 +35,59 @@ const route = useRoute();
 watch(() => route.fullPath, () => {
   showMenu.value = false;
 }, { deep: true, immediate: true });
+
+const hasScrolled = ref(false);
+
+const handleScroll = () => {
+  hasScrolled.value = window.scrollY > 100;  
+}
+
+if (process.client){
+  window.addEventListener('scroll', handleScroll);
+}
 </script>
 
 <template>
   <div
     v-if="menu"
-    ref="openButton"
-    class="flex flex-col gap-8 items-center fixed top-[80px] right-32 lg:top-64 lg:right-64 hover:cursor-pointer z-20"
+    class="w-full lg:w-auto flex justify-between px-32 py-16 lg:p-0 fixed top-0 right-0 lg:top-64 lg:right-64 hover:cursor-pointer z-20 transition-all lg:transition-none"
+    :class="{ 'bg-white shadow-l': hasScrolled }"
   >
-    <PrismicImage
-      v-if="menu.data.icone_ouvrir_menu"
-      class="w-[80%]"
-      :field="menu.data.icone_ouvrir_menu"
-    />
-    <p class="font-bold">{{ menu?.data.titre }}</p>
+    <div
+      ref="openDesktop"
+      class="hidden lg:flex flex-col gap-8 items-center"
+    >
+      <PrismicImage
+        v-if="menu.data.icone_ouvrir_menu"
+        class="w-[80%]"
+        :field="menu.data.icone_ouvrir_menu"
+      />
+      <p class="font-bold">{{ menu?.data.titre }}</p>
+    </div>
+
+    <PrismicLink
+      v-if="parametres && parametres.data.logo && accueil"
+      class="opacity-0 bg-black rounded-full w-[50px] block lg:hidden transition-all"
+      :class="{ 'opacity-100': hasScrolled }"
+      :field="accueil"
+    >
+      <PrismicImage
+        class="p-[20%]"
+        :field="parametres.data.logo"
+      />
+    </PrismicLink>
+    <div
+      ref="openMobile"
+      class="block lg:hidden flex flex-col gap-8 items-center transition-all"
+      :class="hasScrolled ? 'mt-8' : 'mt-64 mr-16'"
+    >
+      <PrismicImage
+        v-if="menu.data.icone_ouvrir_menu"
+        class="w-[80%]"
+        :field="menu.data.icone_ouvrir_menu"
+      />
+      <p class="font-bold">{{ menu?.data.titre }}</p>
+    </div>
   </div>
 
   <div
