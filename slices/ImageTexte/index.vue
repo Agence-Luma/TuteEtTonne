@@ -19,7 +19,7 @@ defineProps(
       class="object-cover min-w-full min-h-full"
       :field="slice.primary.image"
     />
-    <div class="flex flex-col items-start justify-center gap-16 px-xs py-s lg:py-0 lg:px-s xl:px-l">
+    <div class="flex flex-col items-start justify-center gap-16 px-xs py-s lg:px-s xl:px-l">
       <h1>{{ slice.primary.titre }}</h1>
       <PrismicRichText :field="slice.primary.texte" />
     </div>

@@ -32,7 +32,7 @@ defineProps(
           :class="index % 2 === 0 ? '-left-[40px]' : '-right-[40px]'"
         >
           <PrismicImage
-            class="inset-0 min-h-full min-w-full mt-[50%] ml-[50%] -translate-x-1/2 -translate-y-1/2 shadow-l"
+            class="inset-0 min-h-full min-w-full object-cover mt-[50%] ml-[50%] -translate-x-1/2 -translate-y-1/2 shadow-l"
             :field="item.image"
           />
         </div>
