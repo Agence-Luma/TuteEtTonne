@@ -24,7 +24,7 @@ defineProps(
       class="mt-64 lg:mt-32 mb-64 xl:pr-l"
       :field="slice.primary.texte"
     />
-    <div class="flex justify-between gap-64 flex-col lg:flex-row">
+    <div class="flex flex-wrap justify-between gap-64 flex-col lg:flex-row">
       <CarteVerticale
         v-for="carte in slice.items"
         :key="carte.bouton_lien.link_type"

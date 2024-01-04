@@ -32,9 +32,10 @@ props.slice.items.forEach((item) => {
     />
     <div class="flex flex-col lg:grid lg:grid-cols-2 gap-32">
       <CarteHorizontale
-        v-for="carte in cartes"
+        v-for="(carte, index) in cartes"
         :key="carte.uid"
         :carte="carte"
+        :full-width="cartes.length % 2 === 1 && index === cartes.length - 1"
       />
     </div>
   </div>

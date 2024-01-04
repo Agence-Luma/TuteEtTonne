@@ -4,11 +4,19 @@ defineProps({
     type: Object,
     required: true,
   },
+  fullWidth: {
+    type: Boolean,
+    default: false,
+  },
 });
 </script>
 
 <template>
-  <div v-if="carte.value" class="inline-block relative w-full rounded-xl overflow-hidden">
+  <div
+    v-if="carte.value"
+    class="inline-block relative w-full rounded-xl overflow-hidden"
+    :class="{ 'col-span-2': fullWidth }"
+  >
     <div class="text-white z-10 relative flex flex-col items-center justify-between py-100">
       <p class="text-2xl uppercase font-bold text-center">
         {{ carte.value.data.titre_premiere_ligne }}
