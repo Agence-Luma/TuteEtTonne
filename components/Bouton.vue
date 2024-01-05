@@ -13,7 +13,7 @@ defineProps({
 
 <template>
   <PrismicLink
-    class="bg-white px-32 py-16 rounded-xl text-black font-bold"
+    class="bg-white px-32 py-16 rounded-xl text-black font-bold transition-all hover:bg-black hover:text-white"
     :field="lien"
   >
     {{ titre }}

@@ -98,7 +98,7 @@ if (process.client){
 
   <div
     v-if="menu"
-    class="bg-black w-[90vw] lg:w-auto py-64 px-xs lg:pr-100 lg:pl-200 rounded-l-[60px] text-white flex justify-between fixed top-0 right-0 bottom-0 z-30 transition-all"
+    class="bg-black w-[90vw] lg:w-auto py-64 px-xs lg:pr-100 lg:pl-200 rounded-l-[60px] text-white flex justify-between fixed top-0 right-0 bottom-0 z-30 transition-all border-l-2 border-l-white"
     :class="{ 'translate-x-full': !showMenu }"
   >
     <div class="w-full lg:w-auto flex flex-col gap-32 justify-between items-end">

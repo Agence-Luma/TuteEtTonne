@@ -145,7 +145,7 @@ const showNotif = (msg: string, time = 5000, success = false) => {
       >
       <button
         type="submit"
-        class="bg-black text-white px-64 py-8 rounded-lg outline-0 self-center border border-transparent active:bg-transparent active:border-black active:text-black"
+        class="bg-black text-white px-64 py-8 rounded-lg outline-0 self-center border border-transparent active:bg-transparent active:border-black active:text-black transition-all hover:bg-transparent hover:border-black hover:text-black"
       >
         Envoyer
       </button>
@@ -153,7 +153,7 @@ const showNotif = (msg: string, time = 5000, success = false) => {
   </div>
   <div
     ref="notif"
-    class="fixed bottom-64 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:right-64 p-16 rounded-lg z-20 border-2 font-bold opacity-0 transition-all w-[90vw] lg:w-[400px]"
+    class="fixed bottom-64 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:right-64 p-16 rounded-lg z-20 border-2 font-bold opacity-0 transition-all w-[90vw] lg:w-[400px] pointer-events-none"
     :class="{
       'opacity-100': notifShow,
       'border-green-100 text-green-400 bg-green-50': notifSuccess,
