@@ -29,5 +29,6 @@ useHead({
       :formulaire="page.data.formulaire_de_contact"
       class="px-xs lg:px-2xl xl:px-3xl"
     />
+    <Footer />
   </div>
 </template>

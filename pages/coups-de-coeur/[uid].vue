@@ -24,5 +24,6 @@ useHead({
       :slices="page?.data.slices ?? []"
       :components="components"
     />
+    <Footer />
   </div>
 </template>

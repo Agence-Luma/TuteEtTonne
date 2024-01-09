@@ -17,5 +17,6 @@ useHead({
       :images="page.data.carousel"
     />
     <CoupsDeCoeur />
+    <Footer />
   </div>
 </template>

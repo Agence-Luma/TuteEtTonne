@@ -1422,6 +1422,16 @@ export interface AssemblageSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Image large field in *Assemblage → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: assemblage.items[].image_large
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_large: prismic.ImageField<never>;
 }
 
 /**

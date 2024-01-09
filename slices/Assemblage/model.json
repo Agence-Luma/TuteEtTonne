@@ -36,6 +36,14 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "image_large": {
+          "type": "Image",
+          "config": {
+            "label": "Image large",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       }
     }
