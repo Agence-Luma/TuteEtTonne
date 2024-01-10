@@ -8,15 +8,17 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Prismic + Nuxt Minimal Starter',
+      title: 'Tute et Tonne',
       htmlAttrs: {
-        lang: 'en',
+        lang: 'fr',
       },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'description', name: 'description', content: '' },
         { name: 'format-detection', content: 'telephone=no' },
+        { hid: 'description', name: 'description', content: 'Un séjour à la hauteur de vos envies, des vacances atypiques sur mesure (location de gîte, yourte et teardrop).' },
+        { hid: 'og:description', name: 'og:description', content: 'Un séjour à la hauteur de vos envies, des vacances atypiques sur mesure (location de gîte, yourte et teardrop).' },
+        { hid: 'og:image', property: 'og:image', content: 'https://images.prismic.io/tute-et-tonne/6585f2d6531ac2845a26e877_logo.png?auto=compress,format' },
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     }

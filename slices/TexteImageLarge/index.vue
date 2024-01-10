@@ -22,11 +22,13 @@ defineProps(
     <div class="text-white z-10 relative flex flex-col items-center justify-between">
       <h1
         v-if="slice.primary.titre"
-        class="text-center lg:text-start leading-[0.5] lg:leading-none mb-64 lg:mb-16"
+        class="text-center lg:text-start leading-[0.5] lg:leading-none"
       >
         {{ slice.primary.titre }}
       </h1>
       <PrismicRichText
+        v-if="slice.primary.texte[0]"
+        class="mt-64 lg:mt-16"
         :class="slice.primary.bouton_titre && slice.primary.bouton_lien ? 'mb-64' : ''"
         :field="slice.primary.texte"
       />
