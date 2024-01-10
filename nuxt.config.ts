@@ -19,6 +19,10 @@ export default defineNuxtConfig({
         { hid: 'description', name: 'description', content: 'Un séjour à la hauteur de vos envies, des vacances atypiques sur mesure (location de gîte, yourte et teardrop).' },
         { hid: 'og:description', name: 'og:description', content: 'Un séjour à la hauteur de vos envies, des vacances atypiques sur mesure (location de gîte, yourte et teardrop).' },
         { hid: 'og:image', property: 'og:image', content: 'https://images.prismic.io/tute-et-tonne/6585f2d6531ac2845a26e877_logo.png?auto=compress,format' },
+        { hid: "twitter:title", name: "twitter:title", content: 'Tute et Tonne' },
+        { hid: 'twitter:description', name: 'twitter:description', content: 'Un séjour à la hauteur de vos envies, des vacances atypiques sur mesure (location de gîte, yourte et teardrop).' },
+        { hid: "twitter:image", name: "twitter:image", content: 'https://images.prismic.io/tute-et-tonne/6585f2d6531ac2845a26e877_logo.png?auto=compress,format' },
+        { hid: "twitter:card", name: "twitter:card", content: 'summary_large_image' },
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     }
