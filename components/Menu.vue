@@ -50,16 +50,16 @@ if (process.client){
 <template>
   <div
     v-if="menu"
-    class="w-full lg:w-auto flex justify-between px-32 py-16 lg:p-0 fixed top-0 right-0 lg:top-64 lg:right-64 hover:cursor-pointer z-20 transition-all lg:transition-none"
+    class="w-full lg:w-auto flex justify-between px-32 py-16 lg:p-0 fixed top-0 right-0 lg:top-45 lg:right-45 hover:cursor-pointer z-20 transition-all lg:transition-none"
     :class="{ 'bg-white shadow-l lg:bg-transparent lg:shadow-none': hasScrolled }"
   >
     <div
       ref="openDesktop"
-      class="hidden lg:flex flex-col gap-8 items-center"
+      class="hidden lg:flex flex-col gap-8 items-center justify-center bg-white rounded-full w-[80px] h-[80px]"
     >
       <PrismicImage
         v-if="menu.data.icone_ouvrir_menu"
-        class="w-[80%]"
+        class="w-[40%] mt-8"
         :field="menu.data.icone_ouvrir_menu"
       />
       <p class="font-bold">{{ menu?.data.titre }}</p>
@@ -98,7 +98,7 @@ if (process.client){
 
   <div
     v-if="menu"
-    class="bg-black w-[90vw] lg:w-auto py-64 px-xs lg:pr-100 lg:pl-200 rounded-l-[60px] text-white flex justify-between fixed top-0 right-0 bottom-0 z-30 transition-all border-l-2 border-l-white"
+    class="bg-black w-[90vw] lg:w-auto py-64 px-xs lg:pr-100 lg:pl-200 rounded-l-[60px] text-white flex justify-between fixed top-0 right-0 bottom-0 z-30 transition-all"
     :class="{ 'translate-x-full': !showMenu }"
   >
     <div class="w-full lg:w-auto flex flex-col gap-32 justify-between items-end">
