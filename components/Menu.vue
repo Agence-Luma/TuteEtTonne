@@ -78,8 +78,8 @@ if (process.client){
     </PrismicLink>
     <div
       ref="openMobile"
-      class="block lg:hidden flex flex-col gap-8 items-center transition-all"
-      :class="hasScrolled ? 'mt-8' : 'mt-64 mr-16'"
+      class="block lg:hidden flex flex-col gap-8 items-center justify-center transition-all"
+      :class="hasScrolled ? 'mt-8' : 'mt-45 mr-16 bg-white rounded-full p-16 w-[80px] h-[80px]'"
     >
       <PrismicImage
         v-if="menu.data.icone_ouvrir_menu"
