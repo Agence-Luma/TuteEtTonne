@@ -31,6 +31,12 @@ defineProps(
         class="my-16 lg:px-2xl xl:px-3xl text-center"
         :field="slice.primary.texte"
       />
+      <Bouton
+        v-if="slice.primary.texte_bouton && slice.primary.lien_bouton"
+        class="bg-white px-32 py-16 rounded-xl text-black font-bold transition-all hover:bg-black hover:text-white"
+        :titre="slice.primary.texte_bouton"
+        :lien="slice.primary.lien_bouton"
+      />
     </div>
     <PrismicImage
       class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 object-cover min-w-full min-h-full brightness-[0.35]"

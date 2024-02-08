@@ -41,6 +41,18 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"texte_bouton": {
+				"__TYPE__": "FieldContent",
+				"value": "bring",
+				"type": "Text"
+			},
+			"lien_bouton": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
 			}
 		},
 		"items": [

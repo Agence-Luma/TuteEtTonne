@@ -2194,6 +2194,26 @@ export interface TarifsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Texte Bouton field in *Tarifs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tarifs.primary.texte_bouton
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  texte_bouton: prismic.KeyTextField;
+
+  /**
+   * Lien Bouton field in *Tarifs → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tarifs.primary.lien_bouton
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  lien_bouton: prismic.LinkField;
 }
 
 /**

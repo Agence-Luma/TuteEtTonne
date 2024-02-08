@@ -35,6 +35,22 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "texte_bouton": {
+          "type": "Text",
+          "config": {
+            "label": "Texte Bouton",
+            "placeholder": ""
+          }
+        },
+        "lien_bouton": {
+          "type": "Link",
+          "config": {
+            "label": "Lien Bouton",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "select": null
+          }
         }
       },
       "items": {
